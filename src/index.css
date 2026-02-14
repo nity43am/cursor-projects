@@ -1,0 +1,34 @@
+@import '@fontsource/inter';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-inter bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-500;
+}
+
+.glass-card {
+  @apply rounded-3xl border border-white/20 bg-white/10 dark:bg-black/10 backdrop-blur-xl shadow-soft shadow-inner-glow;
+}
+
+.btn-primary {
+  @apply relative inline-flex items-center justify-center rounded-3xl bg-gradient-to-r from-accentCyan to-accentPurple px-4 py-2 text-sm font-medium text-slate-950 shadow-glow transition-all duration-300 ease-soft-spring hover:-translate-y-0.5 hover:shadow-[0_0_30px_rgba(0,245,255,0.7)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accentCyan/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 overflow-hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  @apply pointer-events-none absolute inset-0 rounded-3xl bg-white/30 opacity-0 transition-opacity duration-300;
+}
+
+.btn-primary:hover::before {
+  @apply opacity-30;
+}
